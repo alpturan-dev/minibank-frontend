@@ -5,7 +5,7 @@ axios.defaults.headers.common['Accept'] = 'application/json';
 
 axios.interceptors.request.use(
     (config) => {
-        const token = JSON.parse(localStorage.getItem("user")).token;
+        const token = JSON.parse(localStorage.getItem("user"))?.token || null;
         if (
             token
             && (config.url !== import.meta.env.VITE_API_URL + 'login')
