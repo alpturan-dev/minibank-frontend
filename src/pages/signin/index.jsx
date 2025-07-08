@@ -26,13 +26,13 @@ const Signin = () => {
       const response = await apiRequest.post("/users/signin", {
         ...credentials,
       });
-      setUser({
-        id: response.data.id,
-        token: response.data.token,
-        username: response.data.username,
-        email: response.data.email,
-      });
       if (response.status === 200) {
+        setUser({
+          id: response.data.id,
+          token: response.data.token,
+          username: response.data.username,
+          email: response.data.email,
+        });
         navigate("/");
         toast.success("Successfully signed in!");
       }
