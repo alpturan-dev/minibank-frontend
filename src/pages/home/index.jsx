@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
+import { Link } from "react-router";
 
 const Home = () => {
   return (
@@ -32,10 +33,12 @@ const Home = () => {
                 transfer money, and manage your finances with ease.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
-                  Create Account
-                </button>
-                <button className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+                <Link to="/accounts">
+                  <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors cursor-pointer">
+                    Create Account
+                  </button>
+                </Link>
+                <button className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors cursor-pointer">
                   Learn More
                 </button>
               </div>
